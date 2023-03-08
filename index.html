@@ -29,30 +29,62 @@
 </head>
 
 <body>
-    <main class="grid h-screen place-items-center">
-        <div class="text-center px-100">
-            <h2 class="font-bold text-4xl my-5">Eric Minassian - Software Engineer</h2>
-            <p class="text-lg my-5">
-                Undergraduate student at the University of California, Irvine studying
-                Computer Science and Business Administration - Finance.
-            </p>
-            <p class="my-5 text-lg">
-                Seeking Fall 2023 & Winter 2024 Software Engineer internships in the US.
-            </p>
-            <div class="grid grid-cols-4 content-center my-5">
-                <a class="border-solid border-2 border-black rounded-full mx-2 hover:border-white hover:bg-black hover:text-white"
-                    href="mailto:eric@ericminassian.com" target="_blank" rel="noopener noreferrer">Email</a>
-                <a class="border-solid border-2 border-black rounded-full mx-2 hover:border-white hover:bg-black hover:text-white"
-                    href="https://www.linkedin.com/in/minassian-eric/" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
-                <a class="border-solid border-2 border-black rounded-full mx-2 hover:border-white hover:bg-black hover:text-white"
-                    href="https://www.github.com/eric-minassian" target="_blank" rel="noopener noreferrer">Github</a>
-                <a class="border-solid border-2 border-black rounded-full mx-2 hover:border-white hover:bg-black hover:text-white"
-                    href="./public/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    <main id="main" class="light">
+        <div class="grid h-screen place-items-center dark:bg-black">
+            <div class="text-center dark:text-white">
+                <button id="colorModeToggle" class="absolute top-10 right-10" onclick="setColorMode()"></button>
+                <h2 class="font-bold text-4xl my-5">Eric Minassian - Software Engineer @ Walmart</h2>
+                <p class="text-lg my-5">Undergraduate student at the UCI studying Computer Science and Business
+                    Administration - Finance.
+                </p>
+                <p class="my-5 text-lg">
+                    Seeking Fall 2023 & Winter 2024 Software Engineer internships in the US.
+                </p>
+                <div class="grid grid-cols-4 content-center my-5">
+                    <a class="border-solid border-2 border-black dark:border-white rounded-full mx-2 hover:border-white dark:hover:border-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+                        href="mailto:eric@ericminassian.com" target="_blank" rel="noopener noreferrer">Email</a>
+                    <a class="border-solid border-2 border-black dark:border-white rounded-full mx-2 hover:border-white dark:hover:border-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+                        href="https://www.linkedin.com/in/minassian-eric/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a class="border-solid border-2 border-black dark:border-white rounded-full mx-2 hover:border-white dark:hover:border-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+                        href="https://www.github.com/eric-minassian" target="_blank"
+                        rel="noopener noreferrer">Github</a>
+                    <a class="border-solid border-2 border-black dark:border-white rounded-full mx-2 hover:border-white dark:hover:border-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+                        href="./public/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                </div>
             </div>
         </div>
     </main>
 
 </body>
+
+<script>
+
+    const main_element = document.getElementById("main");
+    const colorModeToggle = document.getElementById("colorModeToggle");
+    const light_button = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>`;
+    const dark_button = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path class="text-white" stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>`;
+
+    colorModeToggle.innerHTML = light_button;
+
+    function setColorMode() {
+        if (main_element.classList.contains("dark")) {
+            main_element.classList.remove("dark");
+            colorModeToggle.innerHTML = light_button;
+        } else {
+            main_element.classList.add("dark")
+            colorModeToggle.innerHTML = dark_button;
+        }
+    };
+
+</script>
 
 </html>
