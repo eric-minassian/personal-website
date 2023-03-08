@@ -14,8 +14,6 @@
     <meta name="keywords"
         content="eric minassian, software engineer, finance, portfolio, internship, university of california, irvine, uci, computer science, business administration, resume, linkedin, github" />
     <link href="./css/output.css" rel="stylesheet" />
-
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JL15C30E8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,13 +22,12 @@
 
         gtag('config', 'G-2JL15C30E8');
     </script>
-
     <link rel="icon" type="image/x-icon" href="./public/favicon.ico" />
 </head>
 
-<body>
-    <main id="main" class="light">
-        <div class="grid h-screen place-items-center dark:bg-black">
+<body id="body">
+    <main>
+        <div class=" grid h-screen place-items-center dark:bg-black">
             <div class="text-center dark:text-white">
                 <button id="colorModeToggle" class="absolute top-10 right-10" onclick="setColorMode()"></button>
                 <h2 class="font-bold text-4xl my-5">Eric Minassian - Software Engineer @ Walmart</h2>
@@ -55,36 +52,32 @@
             </div>
         </div>
     </main>
-
 </body>
 
-<script>
-
-    const main_element = document.getElementById("main");
+<script type="text/javascript">
+    const main_element = document.getElementById("body");
     const colorModeToggle = document.getElementById("colorModeToggle");
-    const light_button = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                    </svg>`;
-    const dark_button = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path class="text-white" stroke-linecap="round" stroke-linejoin="round"
-                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                    </svg>`;
+    const light_button = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>';
+    const dark_button = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke = "currentColor" class="w-6 h-6" ><path class="text-white" stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" /></svg > ';
 
-    colorModeToggle.innerHTML = light_button;
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        main_element.classList.add('dark');
+        colorModeToggle.innerHTML = dark_button;
+    } else {
+        colorModeToggle.innerHTML = light_button;
+    }
 
     function setColorMode() {
         if (main_element.classList.contains("dark")) {
             main_element.classList.remove("dark");
             colorModeToggle.innerHTML = light_button;
+            localStorage.theme = 'light'
         } else {
             main_element.classList.add("dark")
             colorModeToggle.innerHTML = dark_button;
+            localStorage.theme = 'dark'
         }
     };
-
 </script>
 
 </html>
