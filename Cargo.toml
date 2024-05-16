@@ -1,0 +1,28 @@
+[package]
+name = "personal-website"
+version = "0.1.0"
+edition = "2021"
+authors = ["Eric Minassian <eric@ericminassian.com>"]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+enum_glob_use = "deny"
+pedantic = "deny"
+nursery = "deny"
+unwrap_used = "deny"
+
+[dependencies]
+askama = "0.12.1"
+askama_axum = "0.4.0"
+axum = "0.7.5"
+tokio = { version = "1.37.0", features = ["macros", "rt-multi-thread"] }
+tower = "0.4.13"
+tower-http = { version = "0.5.2", features = ["fs"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+strip = true

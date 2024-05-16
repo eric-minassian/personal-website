@@ -1,0 +1,146 @@
+{% extends "layouts/default.html" %} {% block title %}Home{% endblock %} {%block
+content %}
+<main
+  class="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto"
+>
+  <div class="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+    {% include "components/navbar.html" %}
+    <section>
+      <h1 class="font-semibold text-2xl mb-8 tracking-tighter">
+        hey, I'm eric 👋
+      </h1>
+      <p class="prose prose-neutral dark:prose-invert">
+        I &#39;m a Computer Science + Business Administration student at the
+        <a
+          href="https://uci.edu"
+          target="_blank"
+          class="border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-900 dark:text-neutral-100 no-underline"
+        >
+          <img
+            src="/public/images/uci.webp"
+            alt="UCI Logo"
+            class="!mr-1 w-5 h-5"
+            width="250"
+            height="250"
+            loading="lazy"
+            decoding="async"
+          />University of California, Irvine
+        </a>
+        . I &#39;m currently interning at
+        <a
+          href="https://tech.walmart.com"
+          target="_blank"
+          class="border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-900 dark:text-neutral-100 no-underline"
+        >
+          <img
+            src="/public/images/walmart.webp"
+            alt="Walmart Global Tech Logo"
+            class="!mr-1 w-5 h-5"
+            width="1200"
+            height="1199"
+            loading="lazy"
+            decoding="async"
+          />Walmart Global Tech
+        </a>
+        as a Software Engineer II.
+      </p>
+      <div
+        class="my-8 flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 w-full"
+      >
+        <ul
+          class="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300"
+        >
+          <li>
+            <a
+              class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://linkedin.com/in/minassian-eric"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              <p class="h-7 ml-2">linkedin</p>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="/resume"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              <p class="h-7 ml-2">resume</p>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://github.com/eric-minassian"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              <p class="h-7 ml-2">github</p>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="mailto:eric@ericminassian.com"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              <p class="h-7 ml-2">email</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+{% endblock %}
